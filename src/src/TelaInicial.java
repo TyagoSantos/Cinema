@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 
@@ -49,8 +48,6 @@ public class TelaInicial extends JFrame  {
         JButton todos_os_filmes = new JButton("Ver todos os filmes");
         todos_os_filmes.setBounds(790,150,150,30);
         todos_os_filmes.setFont(new Font("arial",Font.BOLD,12));
-        //todos_os_filmes.setForeground(new Color(55, 236, 14));
-        //todos_os_filmes.setBackground(new Color(14, 7, 7));
         add(todos_os_filmes);
 
         //BOTÃO FILME 1
@@ -72,8 +69,6 @@ public class TelaInicial extends JFrame  {
         JButton adm = new JButton("Administrador");
         adm.setBounds(790,650,150,30);
         adm.setFont(new Font("arial",Font.BOLD,15));
-        //adm.setForeground(new Color(69, 232, 31, 255));
-        //adm.setBackground(new Color(10,10,10));
         add(adm);
 
 
@@ -83,7 +78,7 @@ public class TelaInicial extends JFrame  {
         todos_os_filmes.addActionListener(this::verfilmes);
 
         //FUNÇÃO BOTÃO "ADMINISTRADOR"
-        adm.addActionListener(this::loginadm);
+        adm.addActionListener(this::logaradm);
 
 
         //--------------------------IMAGENS-------------------------------//
@@ -93,7 +88,11 @@ public class TelaInicial extends JFrame  {
     }
 
     //METODO QUE ATRIBUI AÇÃO AO BOTÃO DO ADMINISTRADOR
-    private void loginadm(ActionEvent actionEvent) {
+    private void logaradm(ActionEvent actionEvent) {
+        LoginAdm telalogin = new LoginAdm();
+        telalogin.setVisible(true);
+        this.dispose();
+
 
     }
 

@@ -141,7 +141,6 @@ public class TelaDeFilmes extends JFrame {
 
 
 
-
         //--------------CAIXINHA PARA BUSCAR FILMES COM CONTAINER------------//
 
 
