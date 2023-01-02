@@ -102,7 +102,7 @@ public class LoginAdm extends JFrame  {
     //VERIFICAÇÃO LOGIN DO ADM
     private void entrar(ActionEvent actionEvent) {
 
-    if(caixausuario.getText().contains(usuario) && caixasenha.getText().contains(senha)){
+    if(caixausuario.getText().equals(usuario) && caixasenha.getText().equals(senha)){
         System.out.println("Login bem sucedido");
     }else{
         System.out.println("Falha no login");
