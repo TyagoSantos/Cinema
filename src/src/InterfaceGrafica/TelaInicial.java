@@ -11,10 +11,6 @@ import javax.swing.ImageIcon;
 public class TelaInicial extends JFrame  {
 
 
-    //DEFININDO IMAGEM DO CANTO SUPERIOR ESQUERDO
-    ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
-    JLabel ifpe = new JLabel(logo_ifpe);
-
     public TelaInicial(){
 
         //CONFIGURAÇÕES INICIAIS
@@ -85,9 +81,10 @@ public class TelaInicial extends JFrame  {
 
 
         //--------------------------IMAGENS-------------------------------//
+        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
+        JLabel ifpe = new JLabel(logo_ifpe);
         add(ifpe);
         ifpe.setBounds(0,0,300,300);
-
     }
 
     //METODO QUE ATRIBUI AÇÃO AO BOTÃO DO ADMINISTRADOR
@@ -95,10 +92,7 @@ public class TelaInicial extends JFrame  {
         LoginAdm telalogin = new LoginAdm();
         telalogin.setVisible(true);
         this.dispose();
-
-
     }
-
 
     //METODO QUE ATRIBUI AÇÃO AO BOTÃO "VER FILMES"
     private void verfilmes(ActionEvent actionEvent) {
@@ -106,6 +100,4 @@ public class TelaInicial extends JFrame  {
         tela1.setVisible(true);
         this.dispose();
     }
-
-
 }

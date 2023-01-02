@@ -6,8 +6,5 @@ public class Main {
 
 
      new TelaInicial();
-
-
-
     }
-    }
+}
