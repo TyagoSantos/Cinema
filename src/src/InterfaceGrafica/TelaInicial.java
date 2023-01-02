@@ -1,6 +1,9 @@
+package InterfaceGrafica;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.Objects;
 import javax.swing.ImageIcon;
 
 
@@ -9,7 +12,7 @@ public class TelaInicial extends JFrame  {
 
 
     //DEFININDO IMAGEM DO CANTO SUPERIOR ESQUERDO
-    ImageIcon logo_ifpe = new ImageIcon(getClass().getResource("ifpe.png"));
+    ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
     JLabel ifpe = new JLabel(logo_ifpe);
 
     public TelaInicial(){
