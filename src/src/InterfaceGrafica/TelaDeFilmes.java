@@ -20,6 +20,7 @@ public class TelaDeFilmes extends JFrame {
 
         //BARRA DE ROLAGEM DE TELA
         JScrollPane scroll = new JScrollPane(principal);
+        scroll.getVerticalScrollBar().setUnitIncrement(19);
         add(scroll);
 
         //CONFIGURAÇÕES INICIAIS

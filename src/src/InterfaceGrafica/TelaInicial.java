@@ -27,7 +27,7 @@ public class TelaInicial extends JFrame  {
         //---------------------- LABELS ---------------------------------//
 
         //TITULO
-        JLabel titulo = new JLabel("cineIF PAULISTA");
+        JLabel titulo = new JLabel("CineIF PAULISTA");
         titulo.setFont(new Font("Arial",Font.BOLD,40));
         titulo.setBounds(330,10,500,100);
         titulo.setForeground(new Color(63, 164, 13, 236));
