@@ -59,6 +59,11 @@ public class TelaDeFilmes extends JFrame {
 
         //-------------------------BOTÕES--------------------------------------//
 
+        //BOTÃO INFORMAÇÃO
+        JButton helpFilmes = new JButton("Help");
+        helpFilmes.setBounds(900,20,60,25);
+        principal.add(helpFilmes);
+
 
         //BOTÃO FILME 1
         JButton botaof1 = new JButton("FILME 1");
@@ -142,6 +147,7 @@ public class TelaDeFilmes extends JFrame {
         //-----------------FUNÇÃO BOTOES--------------------------------//
 
         botaovoltar.addActionListener(this::voltar);
+        helpFilmes.addActionListener(this::helpFilmes);
 
 
 
@@ -178,6 +184,9 @@ public class TelaDeFilmes extends JFrame {
         this.dispose();
 
     }
-
-
+    private void helpFilmes(ActionEvent actionEvent){
+        JOptionPane.showMessageDialog(null, "Nessa tela, o cliente pode visualisar os filmes disponíveis," +
+                        " além de consultar os filmes (os que estão disponíveis e os que estarão disponíveis)."
+                ,"Help", JOptionPane.QUESTION_MESSAGE);
+    }
 }

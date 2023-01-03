@@ -43,6 +43,11 @@ public class TelaInicial extends JFrame  {
 
         //----------------------BOTOES----------------------------------//
 
+        //BOTÃO INFORMAÇÃO
+        JButton helpInicial = new JButton("Help");
+        helpInicial.setBounds(900,20,60,25);
+        add(helpInicial);
+
         //BOTAO VER TODOS OS FILMES
         JButton todos_os_filmes = new JButton("Ver todos os filmes");
         todos_os_filmes.setBounds(790,150,150,30);
@@ -73,6 +78,9 @@ public class TelaInicial extends JFrame  {
 
         //-------------FUNÇÃO DOS BOTÕES------------------------------//
 
+        //FUNÇÃO BOTÃO "INFORMAÇÃO"
+        helpInicial.addActionListener(this::help);
+
         //FUNÇÃO BOTÃO "VER TODOS OS FILMES"
         todos_os_filmes.addActionListener(this::verfilmes);
 
@@ -99,5 +107,11 @@ public class TelaInicial extends JFrame  {
         TelaDeFilmes tela1 = new TelaDeFilmes();
         tela1.setVisible(true);
         this.dispose();
+    }
+
+    private void help(ActionEvent actionEvent){
+        JOptionPane.showMessageDialog(null, "Nessa tela, o cliente pode optar por acessar algum filme " +
+                "diretamente (os destaques) ou então ele pode acessar uma aba com todos os filmes. O administrador pode acessar a " +
+                "sua tela para ter acesso as suas funcionalidades. ","Help", JOptionPane.QUESTION_MESSAGE);
     }
 }

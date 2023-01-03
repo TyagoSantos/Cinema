@@ -36,27 +36,37 @@ public class LoginAdm extends JFrame  {
 
         //----------- BOTÃO --------------------- //
 
+        //BOTÃO INFORMAÇÃO
+        JButton helpAdm = new JButton("Help");
+        helpAdm.setBounds(900,20,60,25);
+        add(helpAdm);
+
+        //BOTÃO ENTRAR
         JButton botaoentrar = new JButton("ENTRAR");
         botaoentrar.setFont(new Font("arial", Font.BOLD, 15));
         botaoentrar.setBounds(420, 600, 120, 40);
         add(botaoentrar);
 
+        //BOTÃO VOLTAR
         JButton botaovoltar = new JButton("VOLTAR");
         botaovoltar.setFont(new Font("arial", Font.BOLD, 15));
         botaovoltar.setBounds(10, 20, 110, 30);
         add(botaovoltar);
 
+
+        //OS LISTENERS DOS BOTÕES
         botaovoltar.addActionListener(this::voltar);
-       botaoentrar.addActionListener(this::entrar);
+        botaoentrar.addActionListener(this::entrar);
+        helpAdm.addActionListener(this::helpAdm);
+
 
 
         //------------------ TEXTFIELD ----------------------------//
 
         caixausuario = new JTextField();
         caixausuario.setBounds(390, 470, 200, 25);
-        add(caixausuario);
         caixausuario.setToolTipText("Informe o USUÁRIO para fazer o login.");  //comando para deixar uma caixa de texto
-                                                                                //ao passar o mouse em cima
+        add(caixausuario);                                                    //ao passar o mouse em cima
 
 
         caixasenha = new JPasswordField();
@@ -112,6 +122,7 @@ public class LoginAdm extends JFrame  {
 
         login.add(ifpe);
         ifpe.setBounds(350,105,250,250);
+
     }
 
 
@@ -134,5 +145,9 @@ public class LoginAdm extends JFrame  {
         TelaInicial voltar = new TelaInicial();
         voltar.setVisible(true);
         this.dispose();
+    }
+    private void helpAdm(ActionEvent actionEvent){
+        JOptionPane.showMessageDialog(null, "O login através dessa tela é restrita ao administrador."
+                ,"Help", JOptionPane.QUESTION_MESSAGE);
     }
 }
