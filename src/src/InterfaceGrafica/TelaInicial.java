@@ -111,7 +111,7 @@ public class TelaInicial extends JFrame  {
 
     private void help(ActionEvent actionEvent){
         JOptionPane.showMessageDialog(null, "Nessa tela, o cliente pode optar por acessar algum filme " +
-                "diretamente (os destaques) ou então ele pode acessar uma aba com todos os filmes. O administrador pode acessar a " +
+                "diretamente (os destaques) ou então ele pode acessar uma aba com todos os filmes.\n O administrador pode acessar a " +
                 "sua tela para ter acesso as suas funcionalidades. ","Help", JOptionPane.QUESTION_MESSAGE);
     }
 }
