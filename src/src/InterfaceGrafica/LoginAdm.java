@@ -12,6 +12,8 @@ public class LoginAdm extends JFrame  {
     JTextField caixausuario;
     JPasswordField caixasenha;
 
+    JLabel validacaologin;
+
      private String usuario;
      private String senha;
 
@@ -115,6 +117,13 @@ public class LoginAdm extends JFrame  {
         lbladm.setBounds(370,380,500,100);
         login.add(lbladm);
 
+        validacaologin =new JLabel();
+        validacaologin.setFont(new Font("arial", Font.BOLD,20));
+        validacaologin.setBounds(350,550,270,50);
+        login.add(validacaologin);
+
+
+
 
         //----------------- IMAGEM -------------------------//
         ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
@@ -128,17 +137,22 @@ public class LoginAdm extends JFrame  {
 
     //VERIFICAÇÃO LOGIN DO ADM
     private void entrar(ActionEvent actionEvent) {
+
         //credenciais provisórias
         setUsuario("adm");
         setSenha("123");
 
         if(caixausuario.getText().equals(usuario) && caixasenha.getText().equals(senha)){
-        System.out.println("Login bem sucedido");
-        }
-        else{
-        System.out.println("Falha no login");
-        }
+            System.out.println("Login bem sucedido");
+            validacaologin.setForeground(new Color(35, 98, 1));
+            validacaologin.setText("Logado com sucesso!");
 
+
+        }else{
+            System.out.println("Falha no login");
+            validacaologin.setText("Usuário ou senha inválidos");
+            validacaologin.setForeground(new Color(241, 5, 5));
+        }
     }
     private void voltar(ActionEvent actionEvent) {
 
