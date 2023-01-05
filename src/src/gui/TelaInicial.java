@@ -1,4 +1,4 @@
-package InterfaceGrafica;
+package gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -89,7 +89,8 @@ public class TelaInicial extends JFrame  {
 
 
         //--------------------------IMAGENS-------------------------------//
-        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
+
+        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
         JLabel ifpe = new JLabel(logo_ifpe);
         add(ifpe);
         ifpe.setBounds(0,0,300,300);

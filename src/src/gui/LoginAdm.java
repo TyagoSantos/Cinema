@@ -1,4 +1,4 @@
-package InterfaceGrafica;
+package gui;
 
 
 import javax.swing.*;
@@ -126,7 +126,7 @@ public class LoginAdm extends JFrame  {
 
 
         //----------------- IMAGEM -------------------------//
-        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("ifpe.png")));
+        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
         JLabel ifpe = new JLabel(logo_ifpe);
 
         login.add(ifpe);

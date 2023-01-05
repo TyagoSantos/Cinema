@@ -1,6 +1,4 @@
-package InterfaceGrafica;
-
-import InterfaceGrafica.TelaInicial;
+package gui;
 
 import javax.swing.*;
 import java.awt.*;
