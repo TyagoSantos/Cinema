@@ -55,17 +55,17 @@ public class TelaInicial extends JFrame  {
         add(todos_os_filmes);
 
         //BOTÃO FILME 1
-        JButton filme1 = new JButton("FILME 1");
+        JButton filme1 = new JButton(new ImageIcon(getClass().getResource("/midia/teste4.png")));
         filme1.setBounds(110,310,200,250);
         add(filme1);
 
         //BOTAO FILME 2
-        JButton filme2 = new JButton("FILME 2");
+        JButton filme2 = new JButton(new ImageIcon(getClass().getResource("/midia/interstellarpng.png")));
         filme2.setBounds(410,310,200,250);
         add(filme2);
 
         //BOTAO FILME 3
-        JButton filme3 = new JButton("FILME 3");
+        JButton filme3 = new JButton(new ImageIcon((getClass().getResource("/midia/powerrangerspng.png"))));
         filme3.setBounds(710,310,200,250);
         add(filme3);
 
