@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class LoginAdm extends JFrame  {
 
-    public JTextField caixausuario;
+    JTextField caixausuario;
     JPasswordField caixasenha;
 
     JLabel validacaologin;
