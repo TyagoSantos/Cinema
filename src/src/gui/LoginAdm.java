@@ -125,7 +125,7 @@ public class LoginAdm extends JFrame  {
                 validacaologin.setForeground(new Color(35, 98, 1));
                 validacaoMessagem("Logado com sucesso!");
             } catch (RuntimeException e){
-                validacaoMessagem("Sem sucesso no login!");
+                validacaoMessagem(e.getMessage());
                 validacaologin.setForeground(new Color(241, 5, 5));
             }
 

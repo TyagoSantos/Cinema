@@ -10,7 +10,7 @@ public class Administrador{
 
                 }
                 else{
-                        throw new RuntimeException("Informe usuário e senha corretos");
+                        throw new RuntimeException("Usuário ou senha incorretos");
                 }
         }
 }
