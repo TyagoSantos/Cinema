@@ -1,5 +1,5 @@
 package gui;
-
+import core.*;
 
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -9,32 +9,12 @@ import java.util.Objects;
 
 public class LoginAdm extends JFrame  {
 
-    JTextField caixausuario;
+    public JTextField caixausuario;
     JPasswordField caixasenha;
 
     JLabel validacaologin;
 
-     private String usuario;
-     private String senha;
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public LoginAdm(){
-
 
         //----------- BOTÃO --------------------- //
 
@@ -137,22 +117,18 @@ public class LoginAdm extends JFrame  {
 
     //VERIFICAÇÃO LOGIN DO ADM
     private void entrar(ActionEvent actionEvent) {
+            String usuario = caixausuario.getText();
+            String senha = new String(caixasenha.getPassword());
 
-        //credenciais provisórias
-        setUsuario("adm");
-        setSenha("123");
+            if(Administrador.login(usuario, senha)){
+                validacaologin.setForeground(new Color(35, 98, 1));
+                validacaologin.setText("Logado com sucesso!");
+            }
 
-        if(caixausuario.getText().equals(usuario) && caixasenha.getText().equals(senha)){
-            System.out.println("Login bem sucedido");
-            validacaologin.setForeground(new Color(35, 98, 1));
-            validacaologin.setText("Logado com sucesso!");
-
-
-        }else{
-            System.out.println("Falha no login");
-            validacaologin.setText("Usuário ou senha inválidos");
-            validacaologin.setForeground(new Color(241, 5, 5));
-        }
+            else{
+                validacaologin.setText("Usuário ou senha inválidos");
+                validacaologin.setForeground(new Color(241, 5, 5));
+            }
     }
     private void voltar(ActionEvent actionEvent) {
 
