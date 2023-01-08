@@ -120,16 +120,21 @@ public class LoginAdm extends JFrame  {
             String usuario = caixausuario.getText();
             String senha = new String(caixasenha.getPassword());
 
-            if(Administrador.login(usuario, senha)){
+            try{
+                boolean logar = Administrador.login(usuario, senha);
                 validacaologin.setForeground(new Color(35, 98, 1));
-                validacaologin.setText("Logado com sucesso!");
-            }
-
-            else{
-                validacaologin.setText("Usuário ou senha inválidos");
+                validacaoMessagem("Logado com sucesso!");
+            } catch (RuntimeException e){
+                validacaoMessagem("Sem sucesso no login!");
                 validacaologin.setForeground(new Color(241, 5, 5));
             }
+
     }
+
+    private void validacaoMessagem(String menssagem){
+        validacaologin.setText(menssagem);
+    }
+
     private void voltar(ActionEvent actionEvent) {
 
         TelaInicial voltar = new TelaInicial();
