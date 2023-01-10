@@ -7,8 +7,8 @@ public class Conexao {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "Sport@0408"; //colocar a senha que foi criada na máquina local do MySQL//
-    private Connection conexao;
+    private String passWord = "Sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
+    private Connection conexao = null;
 
     public Connection getConexao(){
         return this.conexao;
@@ -22,8 +22,12 @@ public class Conexao {
             conexao = DriverManager.getConnection(url, userName, passWord);
             Statement statement = conexao.createStatement();
         }
-        catch (SQLException e){
+        catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            if(conexao != null){
+                conexao.close();
+            }
         }
     }
 }

@@ -1,6 +1,9 @@
 import database.Conexao;
 import database.Funcionario;
 import gui.*;
+
+import java.sql.SQLException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,6 +11,10 @@ public class Main {
         // new TelaInicial();
 
         Funcionario funcionario = new Funcionario();
-        funcionario.acrescentarLanche();
+        try {
+            funcionario.acrescentarLanche();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
