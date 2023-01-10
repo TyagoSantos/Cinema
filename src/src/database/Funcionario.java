@@ -8,7 +8,7 @@ public class Funcionario {
             Conexao conexao1 = new Conexao();
             Statement con = conexao1.getConexao().createStatement();
 
-           // con.executeUpdate("insert into lanche(idLanche) values (default)");
+           // Comando para inserir dados (tem que vir antes da execução)
             con.executeUpdate("insert into lanche(idlanche, nome, marca, preco, quantidadeEstoque) values (default, 'coca-cola', 'Coca-Cola', '19', '50')");
 
             con.executeQuery("select * from lanche");
