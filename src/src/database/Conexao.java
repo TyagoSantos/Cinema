@@ -1,27 +1,28 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Conexao {
-    private Connection conexao = null;
-    public void verTabela(){ //CONEXÃO PARA VER A TABELA
-        try{
-            conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/Teste", "root", "Fam1l1a..");
+    private String severname = "localhost:3306";
+    private String mydatabase = "CineIF";
+    private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
+    private String userName = "root";
+    private String passWord = "Fam1l1a..";
+    private Connection conexao;
 
+    public Connection getConexao(){
+        return this.conexao;
+    }
+    public void setConexao(Connection conexao){
+        this.conexao = conexao;
+    }
+
+    Conexao() throws SQLException{
+        try {
+            conexao = DriverManager.getConnection(url, userName, passWord);
             Statement statement = conexao.createStatement();
-
-            ResultSet resultSet = statement.executeQuery("select * from cliente");
-
-            while (resultSet.next()){
-                System.out.print(resultSet.getString("nome"));
-                System.out.print(" ");
-                System.out.println(resultSet.getString("idade"));
-            }
         }
-        catch(Exception e){
+        catch (SQLException e){
             e.printStackTrace();
         }
     }
