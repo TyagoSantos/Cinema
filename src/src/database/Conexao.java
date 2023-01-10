@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class Conexao {
     private String severname = "localhost:3306";
-    private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
+    private String mydatabase = "CineIF";
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "Sport@0408"; //colocar a senha que foi criada na máquina local do MySQL//
-    private Connection conexao;
+    private String passWord = "Fam1l1a..";
+    private Connection conexao = null;
 
     public Connection getConexao(){
         return this.conexao;
@@ -24,6 +24,11 @@ public class Conexao {
         }
         catch (SQLException e){
             e.printStackTrace();
+        }
+        finally{
+            if(conexao != null){
+                conexao.close();
+            }
         }
     }
 }
