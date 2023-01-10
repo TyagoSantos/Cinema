@@ -8,7 +8,7 @@ public class Conexao {
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
     private String passWord = "Fam1l1a..";
-    private Connection conexao = null;
+    private Connection conexao;
 
     public Connection getConexao(){
         return this.conexao;
@@ -24,11 +24,6 @@ public class Conexao {
         }
         catch (SQLException e){
             e.printStackTrace();
-        }
-        finally{
-            if(conexao != null){
-                conexao.close();
-            }
         }
     }
 }
