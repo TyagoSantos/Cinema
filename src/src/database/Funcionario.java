@@ -1,5 +1,6 @@
 package database;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class Funcionario {
@@ -25,6 +26,7 @@ public class Funcionario {
         catch(SQLException e){
             e.printStackTrace();
         }
+
     }
 }
 
