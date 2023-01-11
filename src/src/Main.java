@@ -12,7 +12,7 @@ public class Main {
 
         Funcionario funcionario = new Funcionario();
         try {
-            funcionario.acrescentarLanche();
+            funcionario.editarLanche(9, 3);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
