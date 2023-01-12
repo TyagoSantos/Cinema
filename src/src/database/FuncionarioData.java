@@ -1,13 +1,13 @@
 package database;
 import java.sql.*;
 
-public class Funcionario {
+public class FuncionarioData {
 
     private String severname = "localhost:3306";
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "Fam1l1a.."; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     private String nome;
@@ -58,12 +58,12 @@ public class Funcionario {
     }
     public void editarLanche(int idLanche, int quantidadeEstoque) throws SQLException{
         String alterarQTD = "update lanche set quantidadeestoque=? where idlanche = ?";
-            try {
-                conexao = DriverManager.getConnection(url, userName, passWord);
-                PreparedStatement pstmt = conexao.prepareStatement(alterarQTD);
-                pstmt.setInt(1, quantidadeEstoque);
-                pstmt.setInt(2, idLanche);
-                pstmt.executeUpdate();
+        try {
+            conexao = DriverManager.getConnection(url, userName, passWord);
+            PreparedStatement pstmt = conexao.prepareStatement(alterarQTD);
+            pstmt.setInt(1, quantidadeEstoque);
+            pstmt.setInt(2, idLanche);
+            pstmt.executeUpdate();
 
         PreparedStatement statement = conexao.prepareStatement("select * from lanche");
 

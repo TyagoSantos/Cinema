@@ -55,17 +55,17 @@ public class TelaInicial extends JFrame  {
         add(todos_os_filmes);
 
         //BOTÃO FILME 1
-        JButton filme1 = new JButton(new ImageIcon(getClass().getResource("/midia/teste4.png")));
+        JButton filme1 = new JButton();
         filme1.setBounds(110,310,200,250);
         add(filme1);
 
         //BOTAO FILME 2
-        JButton filme2 = new JButton(new ImageIcon(getClass().getResource("/midia/interstellarpng.png")));
+        JButton filme2 = new JButton();
         filme2.setBounds(410,310,200,250);
         add(filme2);
 
         //BOTAO FILME 3
-        JButton filme3 = new JButton(new ImageIcon((getClass().getResource("/midia/powerrangerspng.png"))));
+        JButton filme3 = new JButton();
         filme3.setBounds(710,310,200,250);
         add(filme3);
 
@@ -90,10 +90,10 @@ public class TelaInicial extends JFrame  {
 
         //--------------------------IMAGENS-------------------------------//
 
-        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
-        JLabel ifpe = new JLabel(logo_ifpe);
-        add(ifpe);
-        ifpe.setBounds(0,0,300,300);
+//        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
+//        JLabel ifpe = new JLabel(logo_ifpe);
+//        add(ifpe);
+//        ifpe.setBounds(0,0,300,300);
     }
 
     //METODO QUE ATRIBUI AÇÃO AO BOTÃO DO ADMINISTRADOR

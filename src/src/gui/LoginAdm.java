@@ -106,11 +106,11 @@ public class LoginAdm extends JFrame  {
 
 
         //----------------- IMAGEM -------------------------//
-        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
-        JLabel ifpe = new JLabel(logo_ifpe);
+//        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
+//        JLabel ifpe = new JLabel(logo_ifpe);
 
-        login.add(ifpe);
-        ifpe.setBounds(350,105,250,250);
+//        login.add(ifpe);
+//        ifpe.setBounds(350,105,250,250);
 
     }
 
