@@ -11,7 +11,7 @@ public class Main {
         //AdmFilmesData admFilmesData = new AdmFilmesData();
             AdmLancheData admLancheData = new AdmLancheData();
         try {
-            admLancheData.editarLanche(5,4);
+            admLancheData.editarGeral(1, "Pipoca Tradicional", "Bokus", 17, 100);
         }
         catch (SQLException e) {
             throw new RuntimeException(e);
