@@ -7,7 +7,7 @@ public class Conexao {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "Fam1l1a.."; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     public Connection getConexao(){
@@ -24,10 +24,6 @@ public class Conexao {
         }
         catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if(conexao != null){
-                conexao.close();
-            }
         }
     }
 }

@@ -1,6 +1,5 @@
-import core.Funcionario;
-import database.FuncionarioData;
-import gui.*;
+import database.AdmFilmesData;
+import database.AdmLancheData;
 
 import java.sql.SQLException;
 
@@ -9,11 +8,12 @@ public class Main {
     public static void main(String[] args) {
 
         //new TelaInicial();
-
-        FuncionarioData funcionario = new FuncionarioData();
+        //AdmFilmesData admFilmesData = new AdmFilmesData();
+            AdmLancheData admLancheData = new AdmLancheData();
         try {
-            funcionario.editarLanche(5, 3);
-        } catch (SQLException e) {
+            admLancheData.editarLanche(5,4);
+        }
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
