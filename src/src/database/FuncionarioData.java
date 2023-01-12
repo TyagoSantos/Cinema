@@ -14,28 +14,31 @@ public class FuncionarioData {
     private String marca;
     private int preco;
     private int quantidadeEstoque;
+    private int idLache;
 
 
 
 
     //METODOS FUNCIONÁRIO
-    public void adicionarLanche(String nome, String marca, int preco, int quantidadeEstoque) throws SQLException{
+    public void adicionarLanche(int idLanche, String nome, String marca, int preco, int quantidadeEstoque) throws SQLException{
         this.nome = nome;
         this.marca = marca;
         this.preco = preco;
         this.quantidadeEstoque = quantidadeEstoque;
+        this.idLache = idLanche;
 
 
-        String inserir = "insert into lanche(idlanche, nome, marca, preco, quantidadeEstoque) values (default, ?, ?, ?, ?)";
+        String inserir = "insert into lanche(idlanche, nome, marca, preco, quantidadeEstoque) values (?, ?, ?, ?, ?)";
         try{
             conexao = DriverManager.getConnection(url, userName, passWord);
 
 
             PreparedStatement pstmt = conexao.prepareStatement(inserir);
-            pstmt.setString(1, nome);
-            pstmt.setString(2, marca);
-            pstmt.setInt(3, preco);
-            pstmt.setInt(4,quantidadeEstoque);
+            pstmt.setInt(1, idLanche);
+            pstmt.setString(2, nome);
+            pstmt.setString(3, marca);
+            pstmt.setInt(4, preco);
+            pstmt.setInt(5,quantidadeEstoque);
             pstmt.executeUpdate();
 
 
