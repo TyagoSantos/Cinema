@@ -32,7 +32,7 @@ public class AdmFilmesData {
 
         Conexao conexao = new Conexao();
 
-        String inserir = "insert into lanche(nome, cartaz, trailer, sinopse, diretor, duracao, " +
+        String inserir = "insert into filme(nome, cartaz, trailer, sinopse, diretor, duracao, " +
                 "genero, anoLancamento, classificacaoIndicativa) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try{
             PreparedStatement pstmt = conexao.getConexao().prepareStatement(inserir);

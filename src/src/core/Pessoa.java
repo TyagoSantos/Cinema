@@ -1,6 +1,11 @@
 package core;
 
-public interface Pessoa {
-    public String getCpf();
-    public void setCpf(String cpf);
+public abstract class Pessoa {
+    private String cpf;
+    public String getCpf(){
+        return this.cpf;
+    }
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
 }
