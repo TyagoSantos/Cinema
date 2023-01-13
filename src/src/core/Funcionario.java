@@ -1,6 +1,6 @@
 package core;
 
-public class Funcionario implements Pessoa{
+public class Funcionario extends Pessoa{
     private String nome;
     private String cpf;
     private int idade;

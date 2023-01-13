@@ -1,6 +1,6 @@
 package core;
 
-public class Cliente implements Pessoa{
+public class Cliente extends Pessoa{
     private String cpf;
 
     public Cliente(String cpf){
