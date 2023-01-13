@@ -43,6 +43,7 @@ public class LoginAdm extends JFrame  {
 
 
 
+
         //------------------ TEXTFIELD ----------------------------//
 
         caixausuario = new JTextField();
@@ -124,6 +125,10 @@ public class LoginAdm extends JFrame  {
                 boolean logar = Administrador.login(usuario, senha);
                 validacaologin.setForeground(new Color(35, 98, 1));
                 validacaoMessagem("Logado com sucesso!");
+                LancheADM telalanche = new LancheADM();
+                telalanche.setVisible(true);
+                dispose();
+
             } catch (RuntimeException e){
                 validacaoMessagem(e.getMessage());
                 validacaologin.setForeground(new Color(241, 5, 5));
