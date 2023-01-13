@@ -73,6 +73,9 @@ public class TelaInicial extends JFrame  {
         JButton adm = new JButton("Administrador");
         adm.setBounds(790,650,150,30);
         adm.setFont(new Font("arial",Font.BOLD,15));
+        //adm.setBorderPainted(false);
+        //adm.setContentAreaFilled(false);
+        //adm.setFocusPainted(false);
         add(adm);
 
 

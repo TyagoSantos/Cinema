@@ -109,7 +109,7 @@ public class LoginAdm extends JFrame  {
         //----------------- IMAGEM -------------------------//
 //        ImageIcon logo_ifpe = new ImageIcon(Objects.requireNonNull(getClass().getResource("/midia/ifpe.png")));
 //        JLabel ifpe = new JLabel(logo_ifpe);
-
+//
 //        login.add(ifpe);
 //        ifpe.setBounds(350,105,250,250);
 
@@ -125,8 +125,8 @@ public class LoginAdm extends JFrame  {
                 boolean logar = Administrador.login(usuario, senha);
                 validacaologin.setForeground(new Color(35, 98, 1));
                 validacaoMessagem("Logado com sucesso!");
-                LancheADM telalanche = new LancheADM();
-                telalanche.setVisible(true);
+                crudADM telacrud = new crudADM();
+                telacrud.setVisible(true);
                 dispose();
 
             } catch (RuntimeException e){
