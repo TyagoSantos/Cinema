@@ -7,7 +7,7 @@ public class FuncionarioData {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "203040lL"; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     private String nome;
@@ -74,6 +74,41 @@ public class FuncionarioData {
             System.out.println(rs.getString("marca"));
             System.out.println(rs.getString("preco"));
             System.out.println(rs.getString("quantidadeEstoque"));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            conexao.close();
+        }
+    }
+
+    //MÉTODO PARA O ADM ALTERAR ALGUMA INFORMAÇÃO PASSADA
+    public void editarGeral(int idLanche,String nome, String marca, int preco, int quantidadeEstoque) throws SQLException{
+        //Conexao conexao = new Conexao();
+        String editarGeralUp = "update lanche set nome=?, marca=?, preco=?, quantidadeEstoque=? where idlanche = ?";
+        try {
+            conexao = DriverManager.getConnection(url, userName, passWord);
+
+            PreparedStatement pstmt = conexao.prepareStatement(editarGeralUp);
+            pstmt.setString(1, nome);
+            pstmt.setString(2, marca);
+            pstmt.setInt(3, preco);
+            pstmt.setInt(4, quantidadeEstoque);
+            pstmt.setInt(5, idLanche);
+
+            pstmt.executeUpdate();
+
+            PreparedStatement statement = conexao.prepareStatement("select * from lanche");
+
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                System.out.println(rs.getString("idLanche"));
+                System.out.println(rs.getString("nome"));
+                System.out.println(rs.getString("marca"));
+                System.out.println(rs.getString("preco"));
+                System.out.println(rs.getString("quantidadeEstoque"));
             }
         }
         catch(SQLException e){

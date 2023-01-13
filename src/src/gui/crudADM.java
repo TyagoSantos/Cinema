@@ -104,6 +104,10 @@ public class crudADM extends JFrame {
                     confirmacao.setText(e1.getMessage());
                     confirmacao.setForeground(new Color(245, 13, 13, 255));
 
+                } catch (SQLException ex) {
+                    confirmacao.setText("Erro de conexao!");
+                    confirmacao.setForeground(new Color(245, 13, 13, 255));
+                    //throw new RuntimeException(ex);
                 }
 
 

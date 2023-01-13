@@ -1,4 +1,5 @@
 import core.Funcionario;
+import database.AdmLancheData;
 import database.FuncionarioData;
 import gui.*;
 
@@ -12,9 +13,9 @@ public class Main {
         //new LancheADM();
         //new crudADM();
 
-//        FuncionarioData funcionario = new FuncionarioData();
+//        AdmLancheData funcionario = new AdmLancheData();
 //        try {
-//            funcionario.editarLanche(5, 3);
+//            funcionario.editarGeral(1, "Eduardo", "Eduardo", 12, 1);
 //        } catch (SQLException e) {
 //            throw new RuntimeException(e);
 //        }

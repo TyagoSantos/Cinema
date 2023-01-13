@@ -5,6 +5,7 @@ import database.Conexao;
 
 import javax.swing.*;
 import database.AdmLancheData.*;
+import database.FuncionarioData;
 
 import java.sql.SQLException;
 
@@ -62,14 +63,14 @@ public class Funcionario extends Pessoa{
     }
 
 
-    public static boolean funcEditarLanche(String nome, String preco, String marca, String Quantidade, String ID)  {
-        AdmLancheData lancheadm = new AdmLancheData();
+    public static boolean funcEditarLanche(String nome, String preco, String marca, String Quantidade, String ID) throws SQLException {
+        FuncionarioData lancheadm = new FuncionarioData();
 
         if (nome.isEmpty() || preco.isEmpty() || marca.isEmpty() || Quantidade.isEmpty() || ID.isEmpty() ){
             throw new RuntimeException("Campos vazios");
     }else{
-            //lancheadm.editarGeral(Integer.parseInt(ID),nome,marca,Integer.parseInt(preco),Integer.parseInt(Quantidade));
-
+            lancheadm.editarGeral(Integer.parseInt(ID),nome,marca,Integer.parseInt(preco),Integer.parseInt(Quantidade));
+            //lancheadm.editarGeral(1, "kacio", "luciano", 12, 2);
             return true;
         }
 }}
