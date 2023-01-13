@@ -26,13 +26,13 @@ public class Administrador{
 //                System.out.println(teste.get(posicao));
 //        }
 //
-//        public  void puxarLanche(ArrayList teste){
-//
-//
-//                teste.add(teste);
-//              System.out.println(teste);
-//
-//        }
+        public  void puxarLanche(ArrayList teste){
+
+
+                teste.add(teste);
+              System.out.println(teste);
+
+        }
 //
 //        public ArrayList getTeste(){
 //                return teste;
