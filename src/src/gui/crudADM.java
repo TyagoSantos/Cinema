@@ -1,5 +1,6 @@
 package gui;
 
+import core.Administrador;
 import core.Funcionario;
 
 import javax.swing.*;
@@ -8,6 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import database.FuncionarioData.*;
+
+import core.Administrador.*;
+
 
 public class crudADM extends JFrame {
     private JTextField tfID;
@@ -94,7 +100,7 @@ public class crudADM extends JFrame {
 
                 try{
                     Funcionario funcEditar = new Funcionario();
-                    Funcionario.funcEditarLanche(nome, preco,marca,Quantidade,ID);
+                    Funcionario.funcEditarLanche(nome, preco,marca,Quantidade, ID);
 
                     confirmacao.setText("Tudo certo!");
                     confirmacao.setForeground(new Color(36, 187, 11));
@@ -111,15 +117,11 @@ public class crudADM extends JFrame {
                 }
 
 
-//                if (nome.isBlank() || preco.isBlank() || marca.isBlank() || Quantidade.isBlank() || ID.isBlank() ){
-//                confirmacao.setText("Há campos vazios");
-//                confirmacao.setFont(new Font("arial",Font.BOLD,13));
-//                confirmacao.setForeground(new Color(236, 11, 11));
-//
-//                }else {
-//                    confirmacao.setText("TUDO CERTO!");
-//                    confirmacao.setForeground(new Color(72, 201, 58, 255));
-//                }
+
+
+
+
+
                 }
 
 
@@ -178,15 +180,21 @@ tfQuantidade.addKeyListener(new KeyAdapter() { } );
                 tfNOME.setText("");
                 tfPreco.setText("");
                 tfQuantidade.setText("");
+
+                confirmacao.setText("");
             }
 
 
         });
 
 
+
+
+
         botaolanche1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 tfID.setText("1");
             }
         });

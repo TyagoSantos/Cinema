@@ -1,5 +1,12 @@
 package database;
 import java.sql.*;
+import java.util.ArrayList;
+
+import gui.crudADM;
+import gui.crudADM.*;
+
+import core.Administrador;
+import core.Administrador.*;
 
 public class FuncionarioData {
 
@@ -7,7 +14,7 @@ public class FuncionarioData {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "203040lL"; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     private String nome;
@@ -83,6 +90,49 @@ public class FuncionarioData {
             conexao.close();
         }
     }
+
+
+    public void pullLanches() throws SQLException {
+
+         Administrador teste = new Administrador();
+
+
+
+        //arraylist para puxar do banco
+        ArrayList<String> arrayPull = new ArrayList<String>();
+
+        try {
+            conexao = DriverManager.getConnection(url, userName, passWord);
+
+            PreparedStatement statement = conexao.prepareStatement("select * from lanche ");
+
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+
+                arrayPull.add(rs.getString("idLanche"));
+                arrayPull.add(rs.getString("nome"));
+                arrayPull.add(rs.getString("marca"));
+                arrayPull.add(rs.getString("preco"));
+                arrayPull.add(rs.getString("quantidadeEstoque"));
+
+//                teste.puxarLanche(rs.getString("idLanche"),rs.getString("nome"),
+//                        rs.getString("marca"),rs.getString("preco"),
+//                        rs.getString(("quantidadeEstoque")));
+            }
+//            teste.puxarLanche(arrayPull);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+
+
+
 
     //MÉTODO PARA O ADM ALTERAR ALGUMA INFORMAÇÃO PASSADA
     public void editarGeral(int idLanche,String nome, String marca, int preco, int quantidadeEstoque) throws SQLException{
