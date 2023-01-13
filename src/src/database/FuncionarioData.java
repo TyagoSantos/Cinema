@@ -7,7 +7,7 @@ public class FuncionarioData {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "sua senha"; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "203040lL"; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     private String nome;
@@ -26,7 +26,7 @@ public class FuncionarioData {
         this.quantidadeEstoque = quantidadeEstoque;
 
 
-        String inserir = "insert into lanche(idlanche, nome, marca, preco, quantidadeEstoque) values (default, ?, ?, ?, ?)";
+        String inserir = "insert into lanche(idlanche, nome, marca, preco, quantidadeEstoque) values (?, ?, ?, ?, ?)";
         try{
             conexao = DriverManager.getConnection(url, userName, passWord);
 
