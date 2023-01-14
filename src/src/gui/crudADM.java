@@ -118,10 +118,6 @@ public class crudADM extends JFrame {
 
 
 
-
-
-
-
                 }
 
 
@@ -130,7 +126,7 @@ public class crudADM extends JFrame {
                 botaovoltar.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new LoginAdm().setVisible(true);
+                        new HubADM().setVisible(true);
                         dispose();
 
                     }
@@ -222,6 +218,7 @@ tfQuantidade.addKeyListener(new KeyAdapter() { } );
                 tfID.setText("5");
             }
         });
+
     }}
 
 

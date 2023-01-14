@@ -5,7 +5,9 @@ import javax.swing.*;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
 import java.util.Objects;
+import java.awt.event.KeyEvent;
 
 public class LoginAdm extends JFrame  {
 
@@ -48,14 +50,18 @@ public class LoginAdm extends JFrame  {
 
         caixausuario = new JTextField();
         caixausuario.setBounds(390, 470, 200, 25);
-        caixausuario.setToolTipText("Informe o USUÁRIO para fazer o login.");  //comando para deixar uma caixa de texto
-        add(caixausuario);                                                    //ao passar o mouse em cima
+        caixausuario.setToolTipText("Informe o USUÁRIO para fazer o login.");  //comando para deixar uma caixa de texto ao passar o mouse em cima
+        add(caixausuario);
+
+
+
 
 
         caixasenha = new JPasswordField();
         caixasenha.setBounds(390, 520, 200, 25);
         caixasenha.setToolTipText("Informe a SENHA para fazer o login.");
         add(caixasenha);
+
 
 
         //-------------- JPANEL E CONFIGS INICIAIS ----------------//
@@ -125,8 +131,8 @@ public class LoginAdm extends JFrame  {
                 boolean logar = Administrador.login(usuario, senha);
                 validacaologin.setForeground(new Color(35, 98, 1));
                 validacaoMessagem("Logado com sucesso!");
-                crudADM telacrud = new crudADM();
-                telacrud.setVisible(true);
+                HubADM hubDoAdm = new HubADM();
+                hubDoAdm.setVisible(true);
                 dispose();
 
             } catch (RuntimeException e){
@@ -134,7 +140,10 @@ public class LoginAdm extends JFrame  {
                 validacaologin.setForeground(new Color(241, 5, 5));
             }
 
+
     }
+
+
 
     private void validacaoMessagem(String menssagem){
         validacaologin.setText(menssagem);

@@ -9,20 +9,22 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) {
-
-        FuncionarioData funcionario = new FuncionarioData();
-        Administrador adm = new Administrador();
-        try {
-            funcionario.pullLanches();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
-
+//
+//        FuncionarioData funcionario = new FuncionarioData();
+//        Administrador adm = new Administrador();
+//        try {
+//            funcionario.pullLanches();
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//
+//
+//
         new TelaInicial();
+
+        //new HubADM();
 
 
 

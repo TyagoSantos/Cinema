@@ -14,7 +14,7 @@ public class FuncionarioData {
     private String mydatabase = "cineif"; //colocar o nome idêntico do que esta na máquina local do MySQL//
     private String url = "jdbc:mysql://" + severname + "/" + mydatabase;
     private String userName = "root";
-    private String passWord = "Sua Senha"; //colocar a senha que foi criada na máquina local do MySQL//
+    private String passWord = "203040lL"; //colocar a senha que foi criada na máquina local do MySQL//
     private Connection conexao = null;
 
     private String nome;
