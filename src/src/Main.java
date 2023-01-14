@@ -22,9 +22,21 @@ public class Main {
 //
 //
 //
-        new TelaInicial();
 
-        //new HubADM();
+            Funcionario funcionario1 = new Funcionario();
+
+            FuncionarioData funcionario = new FuncionarioData();
+            Administrador adm = new Administrador();
+            try {
+                funcionario.pullLanches();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            new TelaInicial();
+            System.out.println(funcionario.nomeLanche1);
+
+           
 
 
 
