@@ -36,7 +36,7 @@ public class Main {
             new TelaInicial();
             System.out.println(funcionario.nomeLanche1);
 
-           
+
 
 
 
