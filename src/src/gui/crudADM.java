@@ -1,6 +1,5 @@
 package gui;
 
-import core.Administrador;
 import core.Funcionario;
 
 import javax.swing.*;
@@ -9,10 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import database.FuncionarioData.*;
 
-import core.Administrador.*;
+import database.FuncionarioData;
 
 
 public class crudADM extends JFrame {
@@ -96,10 +93,7 @@ public class crudADM extends JFrame {
                 String Quantidade = tfQuantidade.getText();
                 String ID = tfID.getText();
 
-
-
                 try{
-                    Funcionario funcEditar = new Funcionario();
                     Funcionario.funcEditarLanche(nome, preco,marca,Quantidade, ID);
 
                     confirmacao.setText("Tudo certo!");
@@ -115,16 +109,7 @@ public class crudADM extends JFrame {
                     confirmacao.setForeground(new Color(245, 13, 13, 255));
                     //throw new RuntimeException(ex);
                 }
-
-
-
-
-
-
-
-                }
-
-
+            }
         });
 
                 botaovoltar.addActionListener(new ActionListener() {
@@ -183,43 +168,68 @@ tfQuantidade.addKeyListener(new KeyAdapter() { } );
 
                 confirmacao.setText("");
             }
-
-
         });
-
-
 
 
 
         botaolanche1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                FuncionarioData funcionarioData = new FuncionarioData();
 
                 tfID.setText("1");
+                tfNOME.setText(funcionarioData.nomeLanche1);
+                tfMARCA.setText(funcionarioData.marcaLanche1);
+                tfPreco.setText(funcionarioData.precoLanche1);
+                tfQuantidade.setText(funcionarioData.quantidadeLanche1);
             }
+
         });
         botaolanche2.addActionListener(new ActionListener() {
+            FuncionarioData funcionarioData = new FuncionarioData();
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfID.setText("2");
+                tfNOME.setText(funcionarioData.nomeLanche2);
+                tfMARCA.setText(funcionarioData.marcaLanche2);
+                tfPreco.setText(funcionarioData.precoLanche2);
+                tfQuantidade.setText(funcionarioData.quantidadeLanche2);
             }
         });
         botaolanche3.addActionListener(new ActionListener() {
+            FuncionarioData funcionarioData = new FuncionarioData();
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfID.setText("3");
+                tfNOME.setText(funcionarioData.nomeLanche3);
+                tfMARCA.setText(funcionarioData.marcaLanche3);
+                tfPreco.setText(funcionarioData.precoLanche3);
+                tfQuantidade.setText(funcionarioData.quantidadeLanche3);
+
             }
         });
         botaolanche4.addActionListener(new ActionListener() {
+            FuncionarioData funcionarioData = new FuncionarioData();
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfID.setText("4");
+                tfNOME.setText(funcionarioData.nomeLanche4);
+                tfMARCA.setText(funcionarioData.marcaLanche4);
+                tfPreco.setText(funcionarioData.precoLanche4);
+                tfQuantidade.setText(funcionarioData.quantidadeLanche4);
+
             }
         });
         botaolanche5.addActionListener(new ActionListener() {
+            FuncionarioData funcionarioData = new FuncionarioData();
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfID.setText("5");
+                tfNOME.setText(funcionarioData.nomeLanche5);
+                tfMARCA.setText(funcionarioData.marcaLanche5);
+                tfPreco.setText(funcionarioData.precoLanche5);
+                tfQuantidade.setText(funcionarioData.quantidadeLanche5);
+
             }
         });
     }}

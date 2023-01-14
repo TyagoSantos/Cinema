@@ -68,9 +68,13 @@ public class Funcionario extends Pessoa{
 
         if (nome.isEmpty() || preco.isEmpty() || marca.isEmpty() || Quantidade.isEmpty() || ID.isEmpty() ){
             throw new RuntimeException("Campos vazios");
-    }else{
+        }
+
+        else{
+
+            FuncionarioData funcionarioData = new FuncionarioData();
             lancheadm.editarGeral(Integer.parseInt(ID),nome,marca,Integer.parseInt(preco),Integer.parseInt(Quantidade));
-            //lancheadm.editarGeral(1, "kacio", "luciano", 12, 2);
             return true;
         }
-}}
+    }
+}
